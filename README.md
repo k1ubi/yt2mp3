@@ -1,70 +1,49 @@
 <div align="center">
-
-```
-__   _______ _____ ___  _________ _____ 
-\ \ / /_   _/ __  \|  \/  || ___ \____ |
- \ V /  | | `' / /'| .  . || |_/ /   / /
-  \ /   | |   / /  | |\/| ||  __/    \ \
-  | |   | | ./ /___| |  | || |   .___/ /
-  \_/   \_/ \_____/\_|  |_/\_|   \____/ 
-```
-
-`[ one link in, one mp3 out ]`
-
-![bash](https://img.shields.io/badge/BASH-ff00c8?style=for-the-badge&logo=gnubash&logoColor=00fff9&labelColor=0a0014)
-![youtube--dl](https://img.shields.io/badge/YOUTUBE--DL-00fff9?style=for-the-badge&logo=youtube&logoColor=0a0014&labelColor=0a0014)
-
+<img src="./assets/hero.svg" width="100%"/>
 </div>
 
-<br>
 
 ```
-▓▒░ 0x00 // WHAT IT DOES ░▒▓
+▓▒░ 0x00 // ABOUT ░▒▓
 ```
 
-`yt2mpt.sh` is a light wrapper around [`youtube-dl`](https://github.com/ytdl-org/youtube-dl): it
-prompts for a link, then extracts the audio at max quality and converts it straight to mp3. That's
-the whole tool — no arguments to memorize, no config file.
 
-<br>
-
-```
-▓▒░ 0x01 // LOADOUT ░▒▓
-```
-
-- `python3 -m pip install youtube-dl` (the script calls `youtube-dl` directly, so it must be on `PATH`)
+Minimal bash wrapper around `yt-dlp` to extract audio from a YouTube URL and
+save it as `.mp3`. No flags to remember — just point it at a link.
 
 <br>
 
 ```
-▓▒░ 0x02 // RUN IT ░▒▓
+▓▒░ 0x01 // INSTALL ░▒▓
 ```
 
-```console
-root@node:~/yt2mp3# chmod +x yt2mpt.sh
-root@node:~/yt2mp3# ./yt2mpt.sh
-##############################################
-#   This is a Youtube to mp3 downloader      #
-##############################################
 
-Insert the link to start from:
-> https://www.youtube.com/watch?v=...
+```bash
+# requires yt-dlp and ffmpeg
+sudo apt install ffmpeg
+pip install yt-dlp
 
-Starting...
+git clone https://github.com/k1ubi/yt2mp3.git
+cd yt2mp3
+chmod +x yt2mp3.sh
 ```
 
-Under the hood it runs:
+<br>
 
-```console
-youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 --rm-cache-dir $ytlink
+```
+▓▒░ 0x02 // USAGE ░▒▓
 ```
 
-`--audio-quality 0` = best available, `--rm-cache-dir` clears youtube-dl's cache before each pull.
+
+```bash
+./yt2mp3.sh <youtube-url>
+# → <title>.mp3 in current directory
+```
 
 <br>
 
 <div align="center">
 
-`.: . . : <[ your audio, extracted ]> : . : .`
+`.: . . : <[ end of transmission ]> : . :.`
 
 </div>
